@@ -17,13 +17,13 @@ body {
   width: 281px;
   border-radius: 5px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 40px;
   border-right: none;
 }
 .search-button {
   padding: 10px 50px;
   border-radius: 25px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 #all-products {
   display: grid;
@@ -36,6 +36,7 @@ body {
   justify-content: center;
 }
 .single-product {
+  background-color:lightblue;
   padding: 10px;
   transition: 0.6s;
 }
