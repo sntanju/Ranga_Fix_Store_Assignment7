@@ -41,7 +41,7 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseFloat(element);
+  const converted = parseFloat(element);//parseInt replaced By parseFloat For Fixing "Two Digit After Decimal Point" Bug
   return converted;
 };
 
@@ -49,7 +49,8 @@ const getInputValue = (id) => {
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
-  const total = convertedOldPrice + convertPrice;
+  let total = convertedOldPrice + convertPrice;//Starting Place of Fixing two digit after decimal point for Main Price
+  total = total.toFixed(2);
   document.getElementById(id).innerText = total;
 };
 
@@ -63,22 +64,29 @@ const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConverted * 0.2);
+    let totalTax = priceConverted * 0.2;//Starting Place of Fixing two digit after decimal point for Total Tax
+    totalTax = totalTax.toFixed(2);
+    setInnerText("total-tax", totalTax);
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConverted * 0.3);
+    let totalTax = priceConverted * 0.3;//Starting Place of Fixing two digit after decimal point for Total Tax
+    totalTax = totalTax.toFixed(2);
+    setInnerText("total-tax", totalTax);
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", priceConverted * 0.4);
+    let totalTax = priceConverted * 0.4;//Starting Place of Fixing two digit after decimal point for Total Tax
+    totalTax = totalTax.toFixed(2);
+    setInnerText("total-tax", totalTax);
   }
 };
 
 //grandTotal update function
 const updateTotal = () => {
-  const grandTotal =
+  let grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
-    getInputValue("total-tax");
+    getInputValue("total-tax"); //Starting Place of Fixing two digit after decimal point for Total Price
+  grandTotal = grandTotal.toFixed(2);
   document.getElementById("total").innerText = grandTotal;
 };
