@@ -2,6 +2,16 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+/* Fixed Style For Website Name */
+.store-name {
+  margin-top: 40px;
+  background-color:teal;
+  color: whitesmoke;
+  margin-left: 550px;
+  margin-right: 550px;
+  border-radius: 5px;
+  padding: 10px;
+}
 .search-field {
   border: none;
   border-radius: 50px;
@@ -36,9 +46,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+  /* Fixed Cart User InterFace */
 .single-product {
-  background-color:lightblue;  /* Fixed Cart Background Color */
+  background-color:lightblue;
+  height: 500px;
   padding: 10px;
+  margin: 10px;
   transition: 0.6s;
 }
 .single-product:hover {
